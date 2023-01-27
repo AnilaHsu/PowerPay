@@ -1,0 +1,54 @@
+@import "@/styles/mixins";
+
+.footer {
+  @include sectionLayout(100px, $mobile-page-padding, 80px, $mobile-page-padding);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .brandName {
+    @include brandName;
+  }
+
+  .otherInfo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 44px;
+    margin: 50px 0 38px 0;
+    @include caption(bold, #00000099);
+
+    .infoLink:hover {
+      color: $primary-color;
+    }
+  }
+
+  .copyright {
+    @include caption(bold, #767676);
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .footer {
+    @include sectionLayout(80px, $tablet-page-padding, 80px, $tablet-page-padding);
+
+    .otherInfo {
+      display: flex;
+      flex-direction: row;
+      gap: 48px;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .footer {
+    @include sectionLayout(80px, $desktop-page-padding, 80px, $desktop-page-padding);
+
+    .otherInfo {
+      display: flex;
+      flex-direction: row;
+      gap: 48px;
+    }
+  }
+}

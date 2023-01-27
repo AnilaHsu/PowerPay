@@ -1,0 +1,81 @@
+@import "@/styles/mixins";
+@import "@/styles/variables";
+
+.bannerSection {
+  @include sectionLayout(40px, $mobile-page-padding, 40px, $mobile-page-padding);
+  display: flex;
+  flex-direction: column;
+
+  .bannerInfo {
+    background-color: #FFFFFF;
+    border-radius: $common-border-radius;
+    padding: 24px;
+    width: 299px;
+    height: auto;
+    margin-bottom: -75px;
+    z-index: 1;
+
+    .tagline {
+      @include tagline(1.25rem, 1.6);
+    }
+
+    .about {
+      @include about(0.875rem, 1.7, 14px, 24px);
+    }
+
+    .downloadButton {
+      @include button($primary-color, #FFFFFF, $secondary-color);
+    }
+  }
+
+  .bannerImage {
+    height: 510px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: $common-border-radius;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .bannerSection {
+    @include sectionLayout(40px, $tablet-page-padding, 40px, $tablet-page-padding);
+
+    .bannerInfo {
+      padding: $card-padding;
+      width: 600px;
+
+      .tagline {
+        @include tagline(1.875rem, 1.6);
+      }
+
+      .about {
+        @include about(1rem, 1.75, 14px, 24px);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .bannerSection {
+    @include sectionLayout(40px, 64px, 40px, 64px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .bannerInfo {
+      padding: $card-padding;
+      width: 600px;
+      margin-right: -150px;
+      margin-bottom: 0px;
+
+      .tagline {
+        @include tagline(1.875rem, 1.6);
+      }
+
+      .about {
+        @include about(1rem, 1.75, 14px, 24px);
+      }
+    }
+  }
+}

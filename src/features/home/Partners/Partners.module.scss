@@ -1,0 +1,68 @@
+@import "@/styles/mixins";
+@import "@/styles/variables";
+
+.partnersSection {
+  @include sectionLayout(120px, $mobile-page-padding, 52px, $mobile-page-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .tagline {
+    @include tagline(1.25rem, 1.6);
+  }
+
+  .about {
+    text-align: center;
+    @include about(1rem, 1.75, 16px, 72px);
+  }
+
+  .partners {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    max-width: 380px;
+
+    .partnerLogo {
+      align-self: center;
+      justify-self: center;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .partnersSection {
+    @include sectionLayout(128px, $tablet-page-padding, 68px, $tablet-page-padding);
+
+    .tagline {
+      @include tagline(1.875rem, 1.6);
+    }
+
+    .about {
+      @include about(1rem, 1.75, 16px, 50px);
+    }
+
+    .partners {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 600px;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .partnersSection {
+    @include sectionLayout(128px, $desktop-page-padding, 32px, $desktop-page-padding);
+
+    .tagline {
+      @include tagline(1.875rem, 1.6);
+    }
+
+    .about {
+      @include about(1rem, 1.75, 16px, 42px);
+    }
+
+    .partners {
+      grid-template-columns: repeat(6, 1fr);
+      max-width: 100%;
+    }
+  }
+}

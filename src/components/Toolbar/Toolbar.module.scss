@@ -1,0 +1,49 @@
+@import "@/styles/mixins";
+
+.toolbar {
+  @include sectionLayout(30px, 30px, 30px, 30px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 96px;
+
+  .brandName {
+    @include brandName;
+  }
+
+  .introButton {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .toolbar {
+    @include sectionLayout(24px, 64px, 24px, 64px);
+    display: flex;
+    justify-content: space-between;
+
+    .introButton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      @include button(#EFEFEF, #222222E6, #EAEAEA);
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .toolbar {
+    @include sectionLayout(24px, 64px, 24px, 64px);
+    display: flex;
+    justify-content: space-between;
+
+    .introButton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      @include button(#EFEFEF, #222222E6, #EAEAEA);
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import "@/styles/mixins";
+
+.introSection {
+  @include sectionLayout(80px, $mobile-page-padding, 48px, $mobile-page-padding);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .introSection {
+    @include sectionLayout(80px, $tablet-page-padding, 48px, $tablet-page-padding);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .introSection {
+    @include sectionLayout(80px, $desktop-page-padding, 48px, $desktop-page-padding);
+  }
+}

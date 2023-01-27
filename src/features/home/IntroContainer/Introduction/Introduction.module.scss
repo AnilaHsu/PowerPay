@@ -1,0 +1,44 @@
+@import "@/styles/mixins";
+@import "@/styles/variables";
+
+.introduction {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80px;
+  gap: 40px;
+
+  .introductionImage {
+    height: 520px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: $common-border-radius;
+  }
+
+  .introductionInfo {
+    padding: $card-padding;
+    @include infoBlock(14px, 24px);
+
+    .downloadButton {
+      @include button($primary-color, #FFFFFF, $secondary-color);
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .row {
+    flex-direction: row;
+  }
+
+  .rowReverse {
+    flex-direction: row-reverse;
+  }
+
+  .introduction {
+    align-items: center;
+
+    .introductionImage {
+      width: 460px;
+      flex-shrink: 0;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@import "@/styles/mixins";
+@import "@/styles/variables";
+
+.contactSection {
+  @include sectionLayout(128px, $mobile-page-padding, 128px, $mobile-page-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: #E1E1E1;
+
+  .contactInfo {
+    @include infoBlock(14px, 0px);
+    padding:$card-padding;
+    width: 100%;
+    height: auto;
+    background-color: #FFFFFF;
+    border-radius: $common-border-radius;
+  }
+
+  .contactForm {
+    padding: $card-padding;
+    width: 100%;
+    height: auto;
+    background-color: #FFFFFF;
+    border-radius: $common-border-radius;
+
+    .buttonNote {
+      @include caption(bold, $primary-color);
+      text-align: center;
+      margin-bottom: 8px;
+
+      span {
+        display: inline-block;
+      }
+    }
+
+    .formButton {
+      @include button($primary-color, #FFFFFF, $secondary-color);
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .contactSection {
+    @include sectionLayout(128px, $tablet-page-padding, 128px, $tablet-page-padding);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .contactSection {
+    @include sectionLayout(128px, $desktop-page-padding, 128px, $desktop-page-padding);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .contactInfo {
+      width: 440px;
+      height: 320px;
+    }
+
+    .contactForm {
+      width: 480px;
+      height: 636px;
+    }
+  }
+}

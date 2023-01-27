@@ -1,0 +1,111 @@
+@import "@/styles/variables";
+
+@mixin tagline($fontSize, $lineHeight) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  color: #000000;
+
+  span {
+    display: inline-block;
+  }
+
+  .highline {
+    color: $primary-color;
+  }
+}
+
+@mixin about($fontSize, $lineHeight, $marginTop, $marginBottom) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  color: #767676;
+  margin-top: $marginTop;
+  margin-bottom: $marginBottom;
+
+  span {
+    display: inline-block;
+  }
+}
+
+@mixin subtitle {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: $primary-color;
+  margin-bottom: 14px;
+
+  span {
+    display: inline-block;
+  }
+}
+
+@mixin title {
+  font-size: 1.875rem;
+  line-height: 1.6;
+  color: #000000;
+
+  span {
+    display: inline-block;
+  }
+}
+
+@mixin description {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #767676;
+
+  span {
+    display: inline-block;
+  }
+}
+
+@mixin caption($fontWeight, $color) {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  font-weight: $fontWeight;
+  color: $color;
+}
+
+@mixin button($background, $color, $hoverBackground) {
+  cursor: pointer;
+  padding: 14px 16px;
+  background-color: $background;
+  border-radius: $common-border-radius;
+  border: none;
+  @include caption(bold, $color);
+
+  &:hover {
+    background-color: $hoverBackground;
+  }
+}
+
+@mixin infoBlock($descMarginTop, $descMarginBottom) {
+  .subtitle {
+    @include subtitle;
+  }
+
+  .title {
+    @include title;
+  }
+
+  .description {
+    margin-top: $descMarginTop;
+    margin-bottom: $descMarginBottom;
+    @include description;
+  }
+}
+
+@mixin sectionLayout($top, $right, $bottom, $left) {
+  width: 100%;
+  padding: $top $right $bottom $left;
+}
+
+@mixin brandName {
+  display: flex;
+  align-items: center;
+  font-family: "Roboto";
+  font-size: 1.5rem;
+  line-height: 1.5;
+
+  .logo {
+    margin: 8px;
+  }
+}

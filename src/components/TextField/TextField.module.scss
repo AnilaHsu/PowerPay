@@ -1,0 +1,32 @@
+@import "@/styles/mixins";
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  gap: 8px;
+
+  .label {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: bold;
+    color: #222222;
+  }
+
+  .input {
+    height: 64px;
+    border: 1px solid #E1E1E1;
+    border-radius: 30px;
+    padding: 22px 16px;
+    @include caption(400, #222222);
+
+    ::placeholder {
+      color: #2222224D;
+      opacity: 1;
+    }
+
+    ::-ms-input-placeholder {
+      color: #2222224D;
+    }
+  }
+}
